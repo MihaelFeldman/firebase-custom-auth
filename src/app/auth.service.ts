@@ -34,7 +34,9 @@ export class AuthService {
 
     private setSession(authResult): void {
         const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-        localStorage.setItem('firebase_token', authResult.idTokenPayload["http://shusson/firebaseToken"]);
+        
+        //was the http on purpose and where to find the sending ofthe payload?
+        localStorage.setItem('firebase_token', authResult.idTokenPayload["http://XYZ/firebaseToken"]);
         localStorage.setItem('expires_at', expiresAt);
     }
 
